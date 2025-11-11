@@ -1,0 +1,17 @@
+name: Ejer1_Workflow
+
+on: push
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v5
+    
+      - name: Instalar pytest
+        run: pip install pytest
+
+      - name: Ejecutar tests
+        run: pytest test.py
